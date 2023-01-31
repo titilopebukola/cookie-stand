@@ -53,7 +53,7 @@ const seattle = {
     for (let i = 0; i < seattle.cookiesPerHour.length; i++) {
       console.log("here");
       const li = document.createElement("li");
-      li.textContent = seattle.cookiesPerHour[i];
+      li.textContent = seattle.cookiesPerHour[i] + " cookies";
       ul.appendChild(li);
       console.log(seattle.cookiesPerHour[i]);
     }
@@ -61,3 +61,48 @@ const seattle = {
 };
 seattle.render();
 console.log(seattle);
+
+// constructor has a capital letter
+function CookieStore(name, minCust, maxCust, avgCookie) {
+  this.name = name;
+  this.minCust = minCust;
+  this.maxCust = maxCust;
+  this.avgCookie = avgCookie;
+}
+
+CookieStore.prototype.getAvgCookiesCount = function () {
+  console.log("some random number!");
+};
+
+const Seattle = new CookieStore("Seattle", 23, 65, 6.3);
+const tokyo = new CookieStore("Tokyo", 3, 24, 1.2);
+const anotherCookieStore = new CookieStore("anotherCookieStore", 5, 45, 3.3);
+
+const stores = [pikePlace, otherStore, anotherCookieStore];
+
+// DOM manipulation section (creating a tables)
+const tableEl = document.createElement("table");
+
+for (let i = 0; i < stores.length; i++) {
+  const rowEl = document.createElement("tr");
+  const currentStore = stores[i];
+
+  let el = document.createElement("th");
+  el.textContent = currentStore.name;
+  rowEl.appendChild(el);
+
+  el = document.createElement("td");
+  el.textContent = currentStore.minCust;
+  rowEl.appendChild(el);
+
+  el = document.createElement("td");
+  el.textContent = currentStore.maxCust;
+  rowEl.appendChild(el);
+
+  el = document.createElement("td");
+  el.textContent = currentStore.avgCookie;
+  rowEl.appendChild(el);
+  tableEl.appendChild(rowEl);
+}
+
+document.body.appendChild(tableEl);
