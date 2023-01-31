@@ -1,19 +1,15 @@
 body {
-  background-color: rgb(9, 9, 109);
+  background-color: rgb(6, 6, 82);
   color: white;
-  font-family: sans-serif;
-}
-
-#seattle {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-table {
-  background-color: lavender;
-  color: #333;
-  font-family: Arial, Helvetica, sans-serif;
+a {
+  color: white;
 }
 
-tr {
-  border: 1px solid black;
+td,
+th {
+  border: 1px solid #fff;
+  padding: 0.5rem;
 }
