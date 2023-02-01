@@ -101,7 +101,7 @@ const tokyo = new CookieStore("Tokyo", 3, 24, 1.2);
 const dubai = new CookieStore("Dubai", 11, 38, 3.7);
 const paris = new CookieStore("Paris", 20, 38, 2.3);
 const lima = new CookieStore("Lima", 2, 16, 4.6);
-// const total = new CookieStore("Total");
+const total = new CookieStore("Total");
 seattle.render();
 tokyo.render();
 dubai.render();
