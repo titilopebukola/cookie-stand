@@ -26,6 +26,7 @@ function CookieStore(name, minCust, maxCust, avgSale) {
   this.avgSale = avgSale;
   this.custPerHour = [];
   this.cookiesPerHour = [];
+  this.totcookiesPerHour = [];
 }
 
 CookieStore.prototype.calcCustPerHour = function () {
@@ -42,9 +43,17 @@ CookieStore.prototype.calcCookiesPerHour = function () {
   }
 };
 
+// CookieStore.prototype.calcTotCookiesPerHour = function () {
+//   for (let i = 0; i < this.totcookiesPerHour.length; i++) {
+//     let totcookiesSold = Math.floor(this.custPerHour[i] * cookiesSold);
+//     this.totcookiesPerHour.push(totcookiesSold);
+//   }
+// };
+
 CookieStore.prototype.render = function () {
   this.calcCustPerHour();
   this.calcCookiesPerHour();
+  // this.calcTotCookiesPerHour();
 
   // table
   const table = document.getElementById("myTable");
@@ -92,11 +101,13 @@ const tokyo = new CookieStore("Tokyo", 3, 24, 1.2);
 const dubai = new CookieStore("Dubai", 11, 38, 3.7);
 const paris = new CookieStore("Paris", 20, 38, 2.3);
 const lima = new CookieStore("Lima", 2, 16, 4.6);
+// const total = new CookieStore("Total");
 seattle.render();
 tokyo.render();
 dubai.render();
 paris.render();
 lima.render();
+total.render();
 
 // const seattle = {
 //   name: "Seattle",
