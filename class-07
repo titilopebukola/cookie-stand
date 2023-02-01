@@ -1,0 +1,84 @@
+## Explain why we need domain modeling.
+
+A domain model can be used to verify and validate the understanding of a specific problem among various stakeholders.
+It is a communication tool that defines a vocabulary that can be used within and between both technical and business teams.
+
+## Why should tables not be used for page layouts?
+
+1. Layout tables reduce accessibility for visually impaired users. The markup is more complex than with CSS layout techniques, the screen readers' output will be confusing to their users.
+2. It produce tag soup: It involve more complex markup structures than proper layout techniques. This can result in the code being harder to write, maintain, and debug.
+3. Tables are not automatically responsive: This is because they are sized according to their content by default, so extra measures are needed to get table layout styling to effectively work across a variety of devices.
+   https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Basics
+
+## List and describe 3 different semantic HTML elements used in an HTML <table>
+
+1. Table row <tr>
+2. Table head <th>
+3. Table data <td>
+
+## What is a constructor and what are some advantages to using it?
+
+A constructor is useful for creating multiple objects. It is a special function that creates and initializes an object instance of a class. In JavaScript, a constructor gets called when an object is created using the new keyword. The purpose of a constructor is to create a new object and set values for any existing object properties. https://rollbar.com/blog/javascript-constructors/
+
+## How does the term this differ when used in an object literal versus when used in a constructor?
+
+1. The this keyword refers to the current object the code is being written inside.
+2. This enables you to use the same method definition for every object you create.
+3. This enables us to create more object literal.
+4. in order to create as many objects as we like, and just updating the values for the properties that are different, we need to use a constructor.
+5. A constructor is a function called using the new keyword. When you call a constructor, it will:
+
+- create a new object
+- bind this to the new object, so you can refer to this in your constructor code
+- run the code in the constructor
+- return the new object.
+  https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics#introducing_constructors
+
+## Explain prototypes and inheritance via an analogy from your previous work experience.
+
+1. Prototy is the object where the properties are inherited. Prototype allows objects to be inherited from other objects.
+2. Every object in javascript has an internal property called prototype.
+   https://www.freecodecamp.org/news/prototypes-and-inheritance-in-javascript/
+
+## Key take away
+
+An object property can itself be an object. For example, try changing the name member from:
+person.name;
+person.age;
+
+const person = {
+name: ["Bob", "Smith"],
+};
+
+to
+
+const person = {
+name: {
+first: "Bob",
+last: "Smith",
+},
+// …
+};
+
+To access these items you just need to chain the extra step onto the end with another dot.
+
+person.name.first;
+person.name.last;
+
+If you do this, you'll also need to go through your method code and change any instances of
+
+name[0];
+name[1];
+
+to
+
+name.first;
+name.last;
+
+- Constructors, by convention, start with a capital letter and are named for the type of object they create.
+
+- Domain modeling is the process of creating a conceptual model in code for a specific problem.
+
+## Things I want to know more about
+
+1.
