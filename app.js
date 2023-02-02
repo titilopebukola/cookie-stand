@@ -67,6 +67,11 @@ CookieStore.prototype.render = function () {
   td.textContent = this.name;
   tr.appendChild(td);
 
+  // table footer
+  // let tfoot = document.createElement("tfoot");
+  // tfoot.textContent = this.sumCookiesSold;
+  // tr.appendChild(td);
+
   // get data into the row
   for (let i = 0; i < this.cookiesPerHour.length; i++) {
     td = document.createElement("td");
@@ -82,6 +87,10 @@ function makeHeaderRow() {
   // table row
   const tr = document.createElement("tr");
   table.appendChild(tr);
+
+  // // table footer
+  // const tfoot = document.querySelectorAll("td");
+  // tfoot.appendChild(td);
 
   // starting cell
   let th = document.createElement("th");
@@ -102,12 +111,46 @@ const dubai = new CookieStore("Dubai", 11, 38, 3.7);
 const paris = new CookieStore("Paris", 20, 38, 2.3);
 const lima = new CookieStore("Lima", 2, 16, 4.6);
 const total = new CookieStore("Total");
+
 seattle.render();
 tokyo.render();
 dubai.render();
 paris.render();
 lima.render();
 total.render();
+
+// Event Listeners
+
+// Event Listeners
+
+const form = document.getElementById("new-store-form");
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const storeNameInput = event.target.name.value;
+  const minCustInput = event.target.minCust.value;
+  const maxCustInput = event.target.maxCust.value;
+  const avgCookieInput = event.target.avgCookies.value;
+
+  console.log(storeNameInput);
+  console.log(minCustInput);
+  console.log(maxCustInput);
+  console.log(avgCookieInput);
+
+  form.reset();
+
+  const newStore = new CookieStore(
+    storeNameInput,
+    minCustInput,
+    maxCustInput,
+    avgCookieInput
+  );
+
+  newStore.render();
+});
+
+// form validatiom
 
 // const seattle = {
 //   name: "Seattle",
