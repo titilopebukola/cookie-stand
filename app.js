@@ -67,6 +67,11 @@ CookieStore.prototype.render = function () {
   td.textContent = this.name;
   tr.appendChild(td);
 
+  // table footer
+  // let tf = document.createElement("tf");
+  // tf.textContent = this.total;
+  // tr.appendChild(td);
+
   // get data into the row
   for (let i = 0; i < this.cookiesPerHour.length; i++) {
     td = document.createElement("td");
@@ -108,6 +113,27 @@ dubai.render();
 paris.render();
 lima.render();
 total.render();
+
+// Event Listeners
+
+const form = document.getElementById("new-store-form");
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  console.log(storeNameInput);
+  console.log(minCustInput);
+  console.log(maxCustInput);
+  console.log(avgCookieInput);
+
+  form.requestFullscreen();
+
+  const newStore = new CookieStore(
+    storeNameInput,
+    maxCustInput,
+    avgCookieInput
+  );
+});
 
 // const seattle = {
 //   name: "Seattle",

@@ -196,3 +196,24 @@ h4 p {
   text-align: justify;
   min-height: 200px;
 }
+
+/* form input */
+form {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  border-color: #fff;
+}
+
+input {
+  margin-bottom: 2rem;
+}
+
+label {
+  margin-top: 1rem;
+}
