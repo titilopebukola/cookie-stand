@@ -28,39 +28,36 @@
   
   
         <!-- form input -->
-        <form id="customers-form">
+        <form id="customers-form" action="/action_page.php">
           <fieldset>
             <legend>Enter Your Details Here:</legend>
+            <p>Tell us a bit about yourself and we'll get in touch as soon as we can</p>
             <label for="name-input">Full Name</label>
             <input name="name" id="name-input" type="text" required="name">
       
             <label for="email-input">Email:</label>
-            <input name="email" id="email-input" type="text">
+            <input name="email" id="email-input" type="email" required="email">
 
-            <label for="password-input">Password:</label>
-            <input name="passWord" id="password-input" type="text" required="password">
-
-            <label for="address-input">Address:</label>
-            <input name="address" id="address-input" type="text">
-      
-            <label for="postcode">Postcode:</label>
-            <input name="postCode" id="postcode-input" type="text">
+            <label for="phone-input">Phone Number:</label>
+            <input name="phone" id="phone-number" type="number">
 
             <label for="message">Message</label>
-        <textarea id="txt" name="msg" maxlength="140" rows="5"></textarea>
-      
-            <button id="submit-button" type="submit">SUBMIT</button>
+        <textarea id="txt" name="msg" maxlength="140" rows="5"></textarea>     
+      <br>
+            <button id="msg-button" type="send">Send Message</button>
           </fieldset>
         </form>
         
+        <h3>Contact Information <br>
+        Address: 55 Greenwood Drive <br>
+        Riverdale. RD3 2QR UK <br>
+        Telephone: +441234561234 <br>
+        Email: patsalmoncookies@hotmail</h3>
+
       <script src="app.js"></script>
   
     <footer>
       <div class="footer">
-        <h4>Office Address</h4>
-          <p>50, Greenwood close</p>
-          <p>Lockwood, UK</p>
-          <p>B67 8QW</p>
           <ul>
             <li><a href="link.html">About Us</a></li>
             <li><a href="link.html">Privacy</a></li>
