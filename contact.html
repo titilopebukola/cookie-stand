@@ -1,43 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Sales Data</title>
-  </head>
-  <header>
-    <div id="logo">
-      <img src="images/cookie_logo.png" />
-    </div>
-    <div class="navBar">
-      <ul class="nav-items">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="shop.html">Shop All</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-      </ul>
-    </div>
-  </header>
-  <body>
-    
-  </body>
-  <div class="footer">
-      <h4>Office Address</h4>
-      <p>50, Greenwood close</p>
-      <p>Lockwood, UK</p>
-      <p>B67 8QW</p>
-    <ul>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="style.css" />
+      <title>Contact</title>
+    </head>
+      <body>
+      
+        <header>
+          <div id="logo">
+            <img src="images/cookie_logo.png" />
+          </div>
+          <nav>
+            <div class="navBar">
+              <ul class="nav-items">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop All</a></li>
+                <li><a href="sales.html">Sales</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+              </ul>
+              </div>
+            </nav>
+        </header>
+        <main>
+  
+  
+        <!-- form input -->
+        <form id="customers-form">
+          <fieldset>
+            <legend>Enter Your Details Here:</legend>
+            <label for="name-input">Full Name</label>
+            <input name="name" id="name-input" type="text" required="name">
+      
+            <label for="email-input">Email:</label>
+            <input name="email" id="email-input" type="text">
 
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="link.html">Privacy</a></li>
-      <li><a href="link.html">Terms</a></li>
-      <li><a href="link.html">Follow Us</a></li>
-    </ul>
-  </div>
-  <hr>
-  <span class="w-text-content">All rights Reserved</span> 
-</div>
-</footer>
-</html>
+            <label for="password-input">Password:</label>
+            <input name="passWord" id="password-input" type="text" required="password">
+
+            <label for="address-input">Address:</label>
+            <input name="address" id="address-input" type="text">
+      
+            <label for="postcode">Postcode:</label>
+            <input name="postCode" id="postcode-input" type="text">
+
+            <label for="message">Message</label>
+        <textarea id="txt" name="msg" maxlength="140" rows="5"></textarea>
+      
+            <button id="submit-button" type="submit">SUBMIT</button>
+          </fieldset>
+        </form>
+        
+      <script src="app.js"></script>
+  
+    <footer>
+      <div class="footer">
+        <h4>Office Address</h4>
+          <p>50, Greenwood close</p>
+          <p>Lockwood, UK</p>
+          <p>B67 8QW</p>
+          <ul>
+            <li><a href="link.html">About Us</a></li>
+            <li><a href="link.html">Privacy</a></li>
+            <li><a href="link.html">Terms</a></li>
+            <li><a href="link.html">Follow Us</a></li>
+          </ul>
+        </div>
+        <hr>
+        <span class="w-text-content">All rights Reserved</span> 
+      </div>
+        </footer>
+      </main>
+    </body>
+  </html>
+  
