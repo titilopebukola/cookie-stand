@@ -43,17 +43,9 @@ CookieStore.prototype.calcCookiesPerHour = function () {
   }
 };
 
-// CookieStore.prototype.calcTotCookiesPerHour = function () {
-//   for (let i = 0; i < this.totcookiesPerHour.length; i++) {
-//     let totcookiesSold = Math.floor(this.custPerHour[i] * cookiesSold);
-//     this.totcookiesPerHour.push(totcookiesSold);
-//   }
-// };
-
 CookieStore.prototype.render = function () {
   this.calcCustPerHour();
   this.calcCookiesPerHour();
-  // this.calcTotCookiesPerHour();
 
   // table
   const table = document.getElementById("myTable");
@@ -67,17 +59,20 @@ CookieStore.prototype.render = function () {
   td.textContent = this.name;
   tr.appendChild(td);
 
-  // table footer
-  // let tfoot = document.createElement("tfoot");
-  // tfoot.textContent = this.sumCookiesSold;
-  // tr.appendChild(td);
+  let total = 0;
 
   // get data into the row
   for (let i = 0; i < this.cookiesPerHour.length; i++) {
     td = document.createElement("td");
     td.textContent = this.cookiesPerHour[i];
     tr.appendChild(td);
+
+    total = total + this.calcCookiesPerHour[i];
   }
+  // total cell
+  td = document.createElement("td");
+  td.textContent = total;
+  tr.appendChild(td);
 };
 
 function makeHeaderRow() {
@@ -88,19 +83,20 @@ function makeHeaderRow() {
   const tr = document.createElement("tr");
   table.appendChild(tr);
 
-  // // table footer
-  // const tfoot = document.querySelectorAll("td");
-  // tfoot.appendChild(td);
-
-  // starting cell
+  // empty cell to start
   let th = document.createElement("th");
   tr.appendChild(th);
+
   // get data into the row
   for (let i = 0; i < hours.length; i++) {
     th = document.createElement("th");
     th.textContent = hours[i];
     tr.appendChild(th);
   }
+  // total cell
+  th = document.createElement("th");
+  th.textContent = "Totals";
+  tr.appendChild(th);
 }
 
 makeHeaderRow();
@@ -110,14 +106,49 @@ const tokyo = new CookieStore("Tokyo", 3, 24, 1.2);
 const dubai = new CookieStore("Dubai", 11, 38, 3.7);
 const paris = new CookieStore("Paris", 20, 38, 2.3);
 const lima = new CookieStore("Lima", 2, 16, 4.6);
-const total = new CookieStore("Total");
 
-seattle.render();
-tokyo.render();
-dubai.render();
-paris.render();
-lima.render();
-total.render();
+const stores = [seattle, tokyo, dubai, paris, lima];
+
+for (let i = 0; i < stores.length; i++) {
+  stores[i].render();
+}
+// total row
+function totalRow() {
+  // table
+  const table = document.getElementById("myTable");
+
+  // table row
+  const tr = document.createElement("tr");
+  table.appendChild(tr);
+
+  // table cell
+  let td = document.createElement("td");
+  td.textContent = "Totals";
+  tr.appendChild(td);
+  let fullTotal = 0;
+  // loop round every hour to get each hours total
+  for (let i = 0; i < hours.length; i++) {
+    let hourlyTotal = 0;
+
+    // loop through each store to help get the hours total
+    for (let k = 0; k < stores.length; k++) {
+      hourlyTotal = hourlyTotal + stores[k].cookiesPerHour[i];
+    }
+
+    // hoursly total cell
+    let td = document.createElement("td");
+    td.textContent = hourlyTotal;
+    tr.appendChild(td);
+
+    fullTotal = fullTotal + hourlyTotal;
+  }
+
+  // total total
+  td = document.createElement("td");
+  td.textContent = fullTotal;
+  tr.appendChild(td);
+}
+totalRow();
 
 // Event Listeners
 
@@ -149,6 +180,30 @@ form.addEventListener("submit", function (event) {
 
   newStore.render();
 });
+
+// contact us
+const contact = document.getElementById("customers-form");
+
+contact.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const fullNameInput = event.target.name.value;
+  const emailInput = event.target.email.value;
+  const passWordInput = event.target.passWord.value;
+  const addressInput = event.target.address.value;
+  const postCodeInput = event.target.postCode.value;
+  const msg = event.target.txt.value;
+
+  console.log(fullNameInput);
+  console.log(emailInput);
+  console.log(passWordInput);
+  console.log(addressInput);
+  console.log(postCodeInput);
+  console.log(msg);
+
+  contact.reset();
+});
+contact.render();
 
 // form validatiom
 

@@ -1,43 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Sales Data</title>
-  </head>
-  <header>
-    <div id="logo">
-      <img src="images/cookie_logo.png" />
-    </div>
-    <div class="navBar">
-      <ul class="nav-items">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="shop.html">Shop All</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-      </ul>
-    </div>
-  </header>
-  <body>
-    
-  </body>
-  <div class="footer">
-      <h4>Office Address</h4>
-      <p>50, Greenwood close</p>
-      <p>Lockwood, UK</p>
-      <p>B67 8QW</p>
-    <ul>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="style.css" />
+      <title>Contact</title>
+    </head>
+      <body>
+      
+        <header>
+          <div id="logo">
+            <img src="images/cookie_logo.png" />
+          </div>
+          <nav>
+            <div class="navBar">
+              <ul class="nav-items">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop All</a></li>
+                <li><a href="sales.html">Sales</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+              </ul>
+              </div>
+            </nav>
+        </header>
+        <main>
+  
+  
+        <!-- form input -->
+        <form id="customers-form" action="/action_page.php">
+          <fieldset>
+            <legend>Enter Your Details Here:</legend>
+            <p>Tell us a bit about yourself and we'll get in touch as soon as we can</p>
+            <label for="name-input">Full Name</label>
+            <input name="name" id="name-input" type="text" required="name">
+      
+            <label for="email-input">Email:</label>
+            <input name="email" id="email-input" type="email" required="email">
 
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="link.html">Privacy</a></li>
-      <li><a href="link.html">Terms</a></li>
-      <li><a href="link.html">Follow Us</a></li>
-    </ul>
-  </div>
-  <hr>
-  <span class="w-text-content">All rights Reserved</span> 
-</div>
-</footer>
-</html>
+            <label for="phone-input">Phone Number:</label>
+            <input name="phone" id="phone-number" type="number">
+
+            <label for="message">Message</label>
+        <textarea id="txt" name="msg" maxlength="140" rows="5"></textarea>     
+      <br>
+            <button id="msg-button" type="send">Send Message</button>
+          </fieldset>
+        </form>
+        
+        <h3>Contact Information <br>
+        Address: 55 Greenwood Drive <br>
+        Riverdale. RD3 2QR UK <br>
+        Telephone: +441234561234 <br>
+        Email: patsalmoncookies@hotmail</h3>
+
+      <script src="app.js"></script>
+  
+    <footer>
+      <div class="footer">
+          <ul>
+            <li><a href="link.html">About Us</a></li>
+            <li><a href="link.html">Privacy</a></li>
+            <li><a href="link.html">Terms</a></li>
+            <li><a href="link.html">Follow Us</a></li>
+          </ul>
+        </div>
+        <hr>
+        <span class="w-text-content">All rights Reserved</span> 
+      </div>
+        </footer>
+      </main>
+    </body>
+  </html>
+  
